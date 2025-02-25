@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zenekar Próba Időpont Egyeztető</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Zenekar Próba Időpont Egyeztető</h1>
+            <nav>
+                <button id="monthView" class="active">Havi nézet</button>
+                <button id="weekView">Heti nézet</button>
+            </nav>
+        </header>
+
+        <div class="calendar">
+            <div class="calendar-header">
+                <button id="prevMonth">&lt;</button>
+                <h2 id="currentMonth"></h2>
+                <button id="nextMonth">&gt;</button>
+            </div>
+            <div class="weekdays">
+                <div>Hétfő</div>
+                <div>Kedd</div>
+                <div>Szerda</div>
+                <div>Csütörtök</div>
+                <div>Péntek</div>
+                <div>Szombat</div>
+                <div>Vasárnap</div>
+            </div>
+            <div id="calendarDays" class="days"></div>
+        </div>
+
+        <div class="controls">
+            <div class="suggestions">
+                <h3>Javasolt időpontok</h3>
+                <button id="generateSuggestions">Javaslatok generálása</button>
+                <div id="suggestionsList"></div>
+            </div>
+        </div>
+    </div> <!-- container vége -->
+    
+    <div id="availabilityModal" class="modal">
+        <div class="modal-content">
+            <h3>Elérhetőség beállítása</h3>
+            <div class="modal-date"></div>
+            <div class="member-buttons"></div>
+            <div class="availability-buttons" style="display: none;">
+                <button class="available-btn">Elérhető</button>
+                <button class="unavailable-btn">Nem elérhető</button>
+                <button class="delete-btn">Törlés</button>
+                <button class="cancel-btn">Mégse</button>
+            </div>
+            <div class="day-actions" style="margin-top: 20px; border-top: 1px solid #eee; padding-top: 10px;">
+                <button class="delete-day-btn">Teljes nap törlése</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="eventTypeModal" class="modal">
+        <div class="modal-content">
+            <h3>Esemény létrehozása</h3>
+            <div class="modal-date"></div>
+            <div class="event-type-selector">
+                <select id="eventTypeSelect">
+                    <option value="Próba">Próba</option>
+                    <option value="Stúdiózás">Stúdiózás</option>
+                    <option value="Videózás">Videózás</option>
+                    <option value="Egyéb">Egyéb...</option>
+                </select>
+                <input type="text" id="customEventType" placeholder="Esemény megnevezése..." style="display: none;">
+                <button class="create-btn">Létrehozás</button>
+                <button class="cancel-btn">Mégse</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
